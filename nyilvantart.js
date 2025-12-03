@@ -81,3 +81,15 @@ columns.forEach(col => {
         }
     });
 });
+const addBtn = document.getElementById('add-task-btn');
+const input = document.getElementById('task-input');
+addBtn.onclick = () => {
+    addTask(input.value);
+    input.value = '';
+    input.focus();
+};
+input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+        addBtn.click();
+    }
+});
