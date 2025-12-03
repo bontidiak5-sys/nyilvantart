@@ -51,3 +51,33 @@ function deleteTask(id) {
     saveTasks();
     renderTasks();
 }
+let draggedTaskId = null;
+function dragStart(e) {
+    draggedTaskId = +e.target.dataset.id;
+    e.target.classList.add('dragging');
+}
+function dragEnd(e) {
+    e.target.classList.remove('dragging');
+    draggedTaskId = null;
+}
+columns.forEach(col => {
+    const columnDiv = document.getElementById(col.key);
+    columnDiv.addEventListener('dragover', e => {
+        e.preventDefault();
+        columnDiv.classList.add('drag-over');
+    });
+    columnDiv.addEventListener('dragleave', () => {
+        columnDiv.classList.remove('drag-over');
+    });
+    columnDiv.addEventListener('drop', () => {
+        columnDiv.classList.remove('drag-over');
+        if (draggedTaskId !== null) {
+            const task = tasks.find(t => t.id === draggedTaskId);
+            if (task) {
+                task.status = col.key;
+                saveTasks();
+                renderTasks();
+            }
+        }
+    });
+});
