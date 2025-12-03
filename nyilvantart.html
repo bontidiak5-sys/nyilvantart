@@ -12,6 +12,20 @@
         <input type="text" id="task-input" placeholder="Új feladat...">
         <button id="add-task-btn">Hozzáadás</button>
     </div>
+     <div id="kanban-board">
+        <div class="column" id="todo">
+            <h2>Teendő</h2>
+            <div class="task-list" id="todo-list"></div>
+        </div>
+        <div class="column" id="inprogress">
+            <h2>Folyamatban</h2>
+            <div class="task-list" id="inprogress-list"></div>
+        </div>
+        <div class="column" id="done">
+            <h2>Kész</h2>
+            <div class="task-list" id="done-list"></div>
+        </div>
+    </div>
     <script src="nyilvantart.js"></script>
 </body>
 </html>
