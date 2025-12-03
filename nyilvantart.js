@@ -93,3 +93,5 @@ input.addEventListener('keydown', e => {
         addBtn.click();
     }
 });
+loadTasks();
+renderTasks();
