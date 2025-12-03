@@ -61,4 +61,36 @@ h1 {
     margin: 30px auto;
     max-width: 1000px;
 }
+.column {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 15px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.task-list {
+    flex: 1;
+    min-height: 50px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    cursor: grab;
+    transition: background 0.2s;
+}
 
